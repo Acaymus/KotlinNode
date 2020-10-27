@@ -25,9 +25,9 @@ class memberListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_list)
+        setContentView(R.layout.activity_list)
 
-        members=ArrayList<Member>()
+        members = ArrayList<Member>()
 
         viewManager = LinearLayoutManager(this)
 
@@ -41,10 +41,10 @@ class memberListActivity : AppCompatActivity() {
 
         getAllMembers()
 
-        val fab: FloatingActionButton = findViewById(R.id.floatingActionButton2)
+        val fab: FloatingActionButton = findViewById(R.id.floatingActionButton)
         fab.setOnClickListener {
             val intent = Intent(this, MemberDetailActivity::class.java)
-            intent.putExtra("state", "Adding")
+            intent.putExtra("state", "Añadiendo")
             startActivity(intent)
         }
     }

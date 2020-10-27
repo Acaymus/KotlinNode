@@ -1,4 +1,4 @@
-const db = require("../puesto");
+const db = require("../models");
 const Member = db.sociosstarwars;
 const Op = db.Sequelize.Op;
 

@@ -9,7 +9,7 @@ import com.android.volley.toolbox.ImageLoader
 import com.android.volley.toolbox.Volley
 
 class MemberSingleton constructor(context: Context) {
-    val baseUrl = "http://192.168.1.65:8080"
+    val baseUrl = "http://192.168.1.34:8080"
 
     companion object {
         @Volatile

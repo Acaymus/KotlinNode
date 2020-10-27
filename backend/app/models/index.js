@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.bicycles = require("./member.model.js")(sequelize, Sequelize);
+db.sociosstarwars = require("./member.model.js")(sequelize, Sequelize);
 
 module.exports = db;

@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="24dp"
-        android:text="Edit Room"
+        android:text="Editar miembro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -29,13 +29,13 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
-        android:text="Delete Room"
+        android:text="Eliminar Miembro"
         app:layout_constraintBottom_toTopOf="@+id/buttonEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewMemberDetail"
+        android:id="@+id/imageViewMember"
         android:layout_width="260dp"
         android:layout_height="201dp"
         android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayoutApellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewMemberDetail">
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMember">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TextInputEditTextNombre"
@@ -118,22 +118,5 @@
             android:hint="Puesto" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewMembers"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="676dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

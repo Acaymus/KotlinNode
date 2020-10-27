@@ -4,22 +4,22 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new Bicycle
-    router.post("/", Member.create);
+    router.post("/", member.create);
   
     // Retrieve all Bicycles
-    router.get("/", Member.findAll);
+    router.get("/", member.findAll);
   
     // Retrieve a single bicycle with id
-    router.get("/:id", Member.findOne);
+    router.get("/:id", member.findOne);
   
     // Update a bicycle with id
-    router.put("/:id", Member.update);
+    router.put("/:id", member.update);
   
     // Delete a bicycle with id
-    router.delete("/:id", Member.delete);
+    router.delete("/:id", member.delete);
   
     // Delete all bicycles
-    router.delete("/", Member.deleteAll);
+    router.delete("/", member.deleteAll);
   
-    app.use('/api/member', router);
+    app.use('/api/members', router);
   };

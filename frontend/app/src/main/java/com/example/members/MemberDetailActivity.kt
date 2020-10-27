@@ -25,7 +25,7 @@ class MemberDetailActivity: AppCompatActivity (){
     private lateinit var buttonDelete: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_member_list)
+        setContentView(R.layout.activity_member_detail)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         state = this.intent.getStringExtra("state").toString()
@@ -86,7 +86,7 @@ class MemberDetailActivity: AppCompatActivity (){
 
     private fun createMember(member: Member) {
         val memberServiceImpl = MemberServiceImpl()
-        MemberServiceImpl.createMember(this, Member) { ->
+        memberServiceImpl.createMember(this, member) { ->
             run {
                 changeButtonsToShowing(member.id)
                 val intent = Intent(this, memberListActivity::class.java)
@@ -105,7 +105,7 @@ class MemberDetailActivity: AppCompatActivity (){
         state = "Añadiendo"
     }
 
-    private fun changeButtonsToShowing(roomId: Int) {
+    private fun changeButtonsToShowing(memberId: Int) {
         buttonDelete.visibility = View.VISIBLE
         buttonDelete.isEnabled = true
         buttonEdit.setText("Editando miembro")
@@ -130,11 +130,11 @@ class MemberDetailActivity: AppCompatActivity (){
         memberServiceImpl.getById(this, memberId) { response ->
             run {
 
-                val txt_nombre: TextInputEditText = findViewById(R.id.textInputEditTextNombre)
+                val txt_nombre: TextInputEditText = findViewById(R.id.TextInputEditTextNombre)
                 val txt_apellido: TextInputEditText =
-                    findViewById(R.id.textInputEditTextApellido)
-                val txt_puesto: TextInputEditText = findViewById(R.id.textInputEditTextPuesto)
-                val img: ImageView = findViewById(R.id.imageViewMemberDetail)
+                    findViewById(R.id.TextInputEditTextApellido)
+                val txt_puesto: TextInputEditText = findViewById(R.id.TextInputEditTextPuesto)
+                val img: ImageView = findViewById(R.id.imageViewMember)
 
                 txt_nombre.setText(response?.nombre ?: "")
                 txt_apellido.setText(response?.apellido ?: "")

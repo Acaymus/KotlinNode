@@ -32,7 +32,7 @@ class MemberAdapter(var  memberList: ArrayList<Member>, val context: Context):
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bindView(m: Member, context: Context){
-            val url = "http://192.168.0.164:8080/img/member-"
+            val url = "http://192.168.1.34:8080/img/member-"
          val txt_nombre: TextView = itemView.findViewById(R.id.textViewNombre)
          val txt_apellido: TextView = itemView.findViewById(R.id.textViewApellido)
          val txt_puesto: TextView = itemView.findViewById(R.id.textViewPuesto)
@@ -47,7 +47,7 @@ class MemberAdapter(var  memberList: ArrayList<Member>, val context: Context):
             itemView.setOnClickListener {
                 val intent = Intent(context, MemberDetailActivity::class.java)
                 intent.putExtra("memberId", m.id)
-                intent.putExtra("state", "Showing")
+                intent.putExtra("state", "observando")
                 Log.v("hola caracola antes", m.id.toString())
                 context.startActivity(intent)
             }
